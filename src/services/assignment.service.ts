@@ -49,8 +49,6 @@ export async function getAssignments() {
 export async function getStudentAssignments(): Promise<Assignment[]> {
   const response = await api.get("/assignments/");
 
-  console.log("STUDENT ASSIGNMENTS API:", response.data);
-
   if (Array.isArray(response.data)) {
     return response.data;
   }
