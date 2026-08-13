@@ -24,7 +24,6 @@ import {
   getMyStudentClass,
   type StudentClass,
 } from "@/services/student.service";
-
 import StatCard from "../shared/StatCard";
 
 export default function StudentDashboardPage() {
@@ -53,28 +52,19 @@ export default function StudentDashboardPage() {
         if (assignmentResult.status === "fulfilled") {
           setAssignments(assignmentResult.value);
         } else {
-          console.error(
-            "Student assignments error:",
-            assignmentResult.reason
-          );
+          console.error("Student assignments error:", assignmentResult.reason);
         }
 
         if (submissionResult.status === "fulfilled") {
           setSubmissions(submissionResult.value);
         } else {
-          console.error(
-            "Student submissions error:",
-            submissionResult.reason
-          );
+          console.error("Student submissions error:", submissionResult.reason);
         }
 
         if (classResult.status === "fulfilled") {
           setStudentClass(classResult.value);
         } else {
-          console.error(
-            "Student class error:",
-            classResult.reason
-          );
+          console.error("Student class error:", classResult.reason);
         }
 
         // Only show a dashboard-level error if all three requests fail.
@@ -97,35 +87,30 @@ export default function StudentDashboardPage() {
   }, []);
 
   const submittedAssignmentIds = useMemo(() => {
-    return new Set(
-      submissions.map((submission) => submission.assignment)
-    );
+    return new Set(submissions.map((submission) => submission.assignment));
   }, [submissions]);
 
   const publishedAssignments = useMemo(() => {
     return assignments.filter(
-      (assignment) => assignment.status === "PUBLISHED"
+      (assignment) => assignment.status === "PUBLISHED",
     );
   }, [assignments]);
 
   const pendingAssignments = useMemo(() => {
     return publishedAssignments.filter(
-      (assignment) => !submittedAssignmentIds.has(assignment.id)
+      (assignment) => !submittedAssignmentIds.has(assignment.id),
     );
   }, [publishedAssignments, submittedAssignmentIds]);
 
   const gradedSubmissions = useMemo(() => {
-    return submissions.filter(
-      (submission) => submission.status === "GRADED"
-    );
+    return submissions.filter((submission) => submission.status === "GRADED");
   }, [submissions]);
 
   const recentAssignments = useMemo(() => {
     return [...publishedAssignments]
       .sort(
         (a, b) =>
-          new Date(b.created_at).getTime() -
-          new Date(a.created_at).getTime()
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
       )
       .slice(0, 5);
   }, [publishedAssignments]);
@@ -134,10 +119,7 @@ export default function StudentDashboardPage() {
     return (
       <div className="flex min-h-[400px] items-center justify-center">
         <div className="flex items-center gap-2 text-slate-500">
-          <Loader2
-            size={20}
-            className="animate-spin"
-          />
+          <Loader2 size={20} className="animate-spin" />
           Loading dashboard...
         </div>
       </div>
@@ -172,9 +154,7 @@ export default function StudentDashboardPage() {
           </div>
 
           <div>
-            <p className="text-xs font-medium text-indigo-600">
-              My Class
-            </p>
+            <p className="text-xs font-medium text-indigo-600">My Class</p>
 
             <p className="font-semibold text-slate-900">
               {studentClass[0].class_name}
@@ -186,36 +166,37 @@ export default function StudentDashboardPage() {
       {/* Stats */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard
-          title="Assignments"
+          label="Assignments"
           value={publishedAssignments.length}
           icon={BookOpen}
+          description="Published assignments"
         />
 
         <StatCard
-          title="Pending"
+          label="Pending"
           value={pendingAssignments.length}
           icon={Clock}
+          description="Assignments pending"
         />
 
         <StatCard
-          title="Submitted"
+          label="Submitted"
           value={submissions.length}
           icon={ClipboardList}
+          description="Your submissions"
         />
 
         <StatCard
-          title="Graded"
+          label="Graded"
           value={gradedSubmissions.length}
           icon={CheckCircle2}
+          description="Graded submissions"
         />
       </div>
-
       {/* Recent Assignments */}
       <section className="rounded-xl border border-slate-200 bg-white shadow-sm">
         <div className="border-b border-slate-200 px-5 py-4">
-          <h2 className="font-semibold text-slate-900">
-            Recent Assignments
-          </h2>
+          <h2 className="font-semibold text-slate-900">Recent Assignments</h2>
 
           <p className="mt-1 text-sm text-slate-500">
             Your latest published assignments.
@@ -224,10 +205,7 @@ export default function StudentDashboardPage() {
 
         {recentAssignments.length === 0 ? (
           <div className="px-5 py-12 text-center">
-            <BookOpen
-              size={38}
-              className="mx-auto text-slate-300"
-            />
+            <BookOpen size={38} className="mx-auto text-slate-300" />
 
             <p className="mt-3 font-medium text-slate-700">
               No assignments yet
@@ -240,9 +218,7 @@ export default function StudentDashboardPage() {
         ) : (
           <div className="divide-y divide-slate-100">
             {recentAssignments.map((assignment) => {
-              const submitted = submittedAssignmentIds.has(
-                assignment.id
-              );
+              const submitted = submittedAssignmentIds.has(assignment.id);
 
               return (
                 <div
@@ -255,20 +231,13 @@ export default function StudentDashboardPage() {
                     </h3>
 
                     <div className="mt-1 flex flex-wrap gap-3 text-xs text-slate-500">
-                      <span>
-                        {assignment.subject_name}
-                      </span>
+                      <span>{assignment.subject_name}</span>
 
                       <span>
-                        Due{" "}
-                        {new Date(
-                          assignment.deadline
-                        ).toLocaleDateString()}
+                        Due {new Date(assignment.deadline).toLocaleDateString()}
                       </span>
 
-                      <span>
-                        {assignment.max_marks} marks
-                      </span>
+                      <span>{assignment.max_marks} marks</span>
                     </div>
                   </div>
 
@@ -309,8 +278,7 @@ export default function StudentDashboardPage() {
           </div>
 
           <p className="mt-4 text-sm text-slate-500">
-            Complete and submit these assignments before their
-            deadlines.
+            Complete and submit these assignments before their deadlines.
           </p>
         </div>
 
@@ -333,8 +301,8 @@ export default function StudentDashboardPage() {
           </div>
 
           <p className="mt-4 text-sm text-slate-500">
-            Your graded submissions and feedback are available in
-            your submissions section.
+            Your graded submissions and feedback are available in your
+            submissions section.
           </p>
         </div>
       </div>
