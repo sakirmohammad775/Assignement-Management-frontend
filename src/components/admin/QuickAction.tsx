@@ -13,7 +13,7 @@ export default function QuickAction({
   return (
     <Link
       href={href}
-      className="flex items-center justify-between rounded-lg border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-700"
+      className="flex items-center justify-between rounded-lg border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-indigo-200 hover:bg-rose-50 hover:text-[#6b1d2f]"
     >
       {label}
 

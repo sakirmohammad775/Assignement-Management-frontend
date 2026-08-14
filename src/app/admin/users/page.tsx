@@ -224,7 +224,7 @@ export default function AdminUsersPage() {
         <button
           type="button"
           onClick={openCreateModal}
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#6b1d2f] px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
         >
           <Plus size={18} />
           Add User
@@ -316,7 +316,7 @@ export default function AdminUsersPage() {
                   <tr key={user.id} className="hover:bg-slate-50">
                     <td className="px-5 py-4">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-sm font-semibold text-indigo-700">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#6b1d2f] to-rose-950 text-sm font-semibold text-[#6b1d2f]">
                           {(user.first_name || user.username)
                             .charAt(0)
                             .toUpperCase()}
@@ -519,7 +519,7 @@ export default function AdminUsersPage() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="rounded-lg bg-[#6b1d2f] px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {saving
                     ? "Saving..."

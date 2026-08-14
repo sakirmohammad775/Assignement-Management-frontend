@@ -120,7 +120,7 @@ export default function AdminSubjectsPage() {
   if (loading) {
     return (
       <div className="flex min-h-[400px] items-center justify-center">
-        <Loader2 className="animate-spin text-indigo-600" size={28} />
+        <Loader2 className="animate-spin text-[#6b1d2f]" size={28} />
       </div>
     );
   }
@@ -139,7 +139,7 @@ export default function AdminSubjectsPage() {
 
         <button
           onClick={openCreateModal}
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#6b1d2f] px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
         >
           <Plus size={18} />
           Add Subject
@@ -285,7 +285,7 @@ export default function AdminSubjectsPage() {
                 <button
                   type="submit"
                   disabled={saving || !name.trim() || !code.trim()}
-                  className="rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="rounded-lg bg-[#6b1d2f] px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   {saving
                     ? "Saving..."

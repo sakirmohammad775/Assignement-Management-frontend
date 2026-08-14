@@ -60,7 +60,7 @@ export default function TeacherSubjectsPage() {
     <div className="p-4 sm:p-6 lg:p-8">
       {/* Header */}
       <div>
-        <p className="text-sm font-medium text-indigo-600">
+        <p className="text-sm font-medium text-[#6b1d2f]">
           Teacher Portal
         </p>
 
@@ -114,7 +114,7 @@ export default function TeacherSubjectsPage() {
         !error &&
         subjects.length === 0 && (
           <div className="mt-6 rounded-xl border border-slate-200 bg-white p-10 text-center shadow-sm">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-indigo-50 text-indigo-600">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-rose-50 text-[#6b1d2f]">
               <BookOpen size={22} />
             </div>
 
@@ -151,7 +151,7 @@ export default function TeacherSubjectsPage() {
                   className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <div className="flex items-start justify-between">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-rose-50 text-[#6b1d2f]">
                       <BookOpen size={21} />
                     </div>
 

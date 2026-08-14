@@ -286,7 +286,7 @@ export default function AdminStudentsPage() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-rose-50 text-[#6b1d2f]">
               <GraduationCap size={22} />
             </div>
 
@@ -417,7 +417,7 @@ export default function AdminStudentsPage() {
 
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo-50 font-semibold text-indigo-600">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-50 font-semibold text-[#6b1d2f]">
                           {(
                             student.first_name?.[0] ||
                             student.username?.[0] ||
@@ -480,7 +480,7 @@ export default function AdminStudentsPage() {
                           onClick={() =>
                             openAssignModal(student)
                           }
-                          className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm font-medium text-indigo-700 transition hover:bg-indigo-100"
+                          className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-rose-50 px-3 py-2 text-sm font-medium text-[#6b1d2f] transition hover:bg-gradient-to-br from-[#6b1d2f] to-rose-950"
                         >
                           <Pencil size={15} />
 
@@ -617,7 +617,7 @@ export default function AdminStudentsPage() {
                   classesLoading ||
                   !selectedClassId
                 }
-                className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#6b1d2f] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {assigning && (
                   <Loader2

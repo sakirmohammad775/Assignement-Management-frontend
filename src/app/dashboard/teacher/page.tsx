@@ -82,7 +82,7 @@ export default function TeacherDashboardPage() {
     return (
       <div className="flex min-h-[500px] items-center justify-center">
         <div className="flex flex-col items-center gap-3">
-          <Loader2 className="animate-spin text-indigo-600" size={32} />
+          <Loader2 className="animate-spin text-[#6b1d2f]" size={32} />
 
           <p className="text-sm text-slate-500">Loading teacher dashboard...</p>
         </div>
@@ -96,7 +96,7 @@ export default function TeacherDashboardPage() {
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm font-semibold text-indigo-600">
+          <p className="text-sm font-semibold text-[#6b1d2f]">
             Teacher Portal
           </p>
 
@@ -111,7 +111,7 @@ export default function TeacherDashboardPage() {
 
         <Link
           href="/dashboard/assignments/create"
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#6b1d2f] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
         >
           <Plus size={18} />
           Create Assignment
@@ -173,7 +173,7 @@ export default function TeacherDashboardPage() {
 
             <Link
               href="/dashboard/assignments"
-              className="text-sm font-semibold text-indigo-600 hover:text-indigo-700"
+              className="text-sm font-semibold text-[#6b1d2f] hover:text-[#6b1d2f]"
             >
               View all
             </Link>
@@ -282,7 +282,7 @@ export default function TeacherDashboardPage() {
 
           <Link
             href="/dashboard/submissions"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-indigo-600"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-[#6b1d2f]"
           >
             View all
             <ArrowUpRight size={15} />
@@ -326,7 +326,7 @@ export default function TeacherDashboardPage() {
 
           <Link
             href="/dashboard/submissions"
-            className="text-sm font-semibold text-indigo-600"
+            className="text-sm font-semibold text-[#6b1d2f]"
           >
             View all
           </Link>
@@ -390,7 +390,7 @@ function StatCard({
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
       <div className="flex items-center justify-between">
-        <div className="rounded-lg bg-indigo-50 p-2.5 text-indigo-600">
+        <div className="rounded-lg bg-rose-50 p-2.5 text-[#6b1d2f]">
           {icon}
         </div>
       </div>
@@ -414,7 +414,7 @@ function OverviewCard({
   return (
     <div className="rounded-xl bg-slate-50 p-5">
       <div className="flex items-center gap-3">
-        <div className="rounded-lg bg-white p-2 text-indigo-600 shadow-sm">
+        <div className="rounded-lg bg-white p-2 text-[#6b1d2f] shadow-sm">
           {icon}
         </div>
 
@@ -440,7 +440,7 @@ function QuickAction({
   return (
     <Link
       href={href}
-      className="flex items-center gap-3 rounded-lg border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-700"
+      className="flex items-center gap-3 rounded-lg border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-indigo-200 hover:bg-rose-50 hover:text-[#6b1d2f]"
     >
       {icon}
 

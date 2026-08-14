@@ -23,9 +23,12 @@ export default function ProfilePage() {
   if (!user) {
     return (
       <div className="flex min-h-[400px] items-center justify-center">
-        <p className="text-sm text-slate-500">
-          Loading profile...
-        </p>
+        <div className="flex items-center gap-3 rounded-2xl border border-slate-200/80 bg-white px-5 py-3 shadow-sm">
+          <span className="h-2 w-2 rounded-full bg-[#6b1d2f] animate-ping" />
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+            Loading profile...
+          </p>
+        </div>
       </div>
     );
   }
@@ -41,45 +44,49 @@ export default function ProfilePage() {
     "U";
 
   return (
-    <div className="mx-auto max-w-5xl p-4 sm:p-6 lg:p-8">
+    <div className="mx-auto max-w-5xl space-y-6 p-4 sm:p-6 lg:p-8 bg-slate-50/50 min-h-screen">
       {/* Header */}
-      <div className="mb-6">
+      <div>
         <Link
           href="/dashboard"
-          className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-slate-900"
+          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 transition-colors hover:text-[#6b1d2f]"
         >
-          <ArrowLeft size={17} />
+          <ArrowLeft size={16} />
           Back to Dashboard
         </Link>
 
-        <div className="mt-5">
-          <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+        <div className="mt-4 border-b border-slate-200/80 pb-5">
+          <p className="text-xs font-bold uppercase tracking-widest text-[#6b1d2f]">
+            Account Management
+          </p>
+          <h1 className="mt-1 text-2xl font-black tracking-tight text-slate-900 sm:text-3xl">
             My Profile
           </h1>
-
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-xs font-medium text-slate-500">
             View your account information and profile details.
           </p>
         </div>
       </div>
 
       {/* Profile Hero */}
-      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm">
         {/* Cover */}
-        <div className="h-32 bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-500 sm:h-40" />
+        <div className="h-32 bg-gradient-to-r from-[#6b1d2f] via-rose-900 to-slate-900 sm:h-44 relative">
+          <div className="absolute inset-0 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] opacity-10" />
+        </div>
 
         {/* Profile information */}
         <div className="px-5 pb-6 sm:px-8">
-          <div className="-mt-12 flex flex-col gap-5 sm:-mt-14 sm:flex-row sm:items-end sm:justify-between">
+          <div className="-mt-12 flex flex-col gap-4 sm:-mt-16 sm:flex-row sm:items-end sm:justify-between">
             {/* Avatar */}
-            <div className="flex h-24 w-24 items-center justify-center rounded-2xl border-4 border-white bg-indigo-100 text-3xl font-bold text-indigo-700 shadow-md sm:h-28 sm:w-28 sm:text-4xl">
+            <div className="flex h-24 w-24 items-center justify-center rounded-2xl border-4 border-white bg-gradient-to-br from-[#6b1d2f] to-rose-950 text-3xl font-black text-white shadow-lg ring-1 ring-slate-900/10 sm:h-28 sm:w-28 sm:text-4xl">
               {initial}
             </div>
 
             {/* Role */}
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-indigo-700">
-                <ShieldCheck size={14} />
+              <span className="inline-flex items-center gap-1.5 rounded-xl bg-slate-100 px-3.5 py-1.5 text-xs font-extrabold uppercase tracking-wider text-[#6b1d2f] border border-slate-200/60 shadow-xs">
+                <ShieldCheck size={15} className="text-[#6b1d2f]" />
                 {user.role}
               </span>
             </div>
@@ -87,11 +94,11 @@ export default function ProfilePage() {
 
           {/* Name */}
           <div className="mt-5">
-            <h2 className="text-2xl font-bold text-slate-900">
+            <h2 className="text-2xl font-black tracking-tight text-slate-900 sm:text-3xl">
               {fullName}
             </h2>
 
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-0.5 text-xs font-semibold text-slate-400">
               @{user.username}
             </p>
           </div>
@@ -99,16 +106,16 @@ export default function ProfilePage() {
       </div>
 
       {/* Information */}
-      <div className="mt-6 grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-6 lg:grid-cols-3">
         {/* Account information */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
-              <UserCircle size={20} />
+        <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm lg:col-span-2">
+          <div className="flex items-center gap-3.5 border-b border-slate-100 pb-4">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-50 text-[#6b1d2f]">
+              <UserCircle size={22} />
             </div>
 
             <div>
-              <h2 className="font-semibold text-slate-900">
+              <h2 className="text-base font-bold text-slate-900">
                 Account Information
               </h2>
 
@@ -118,7 +125,7 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          <div className="mt-6 grid gap-5 sm:grid-cols-2">
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
             {/* First name */}
             <InfoItem
               label="First Name"
@@ -161,66 +168,70 @@ export default function ProfilePage() {
         </div>
 
         {/* Account status */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="font-semibold text-slate-900">
-            Account Status
-          </h2>
+        <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <div className="border-b border-slate-100 pb-4">
+              <h2 className="text-base font-bold text-slate-900">
+                Account Status
+              </h2>
 
-          <p className="mt-1 text-sm text-slate-500">
-            Current account information
-          </p>
+              <p className="mt-0.5 text-xs text-slate-500">
+                Current account information
+              </p>
+            </div>
 
-          <div className="mt-6 space-y-4">
-            <div className="rounded-xl bg-green-50 p-4">
-              <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-green-100 text-green-600">
-                  <ShieldCheck size={18} />
-                </div>
+            <div className="mt-6 space-y-3.5">
+              <div className="rounded-xl border border-emerald-200/80 bg-emerald-50/60 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700">
+                    <ShieldCheck size={18} />
+                  </div>
 
-                <div>
-                  <p className="text-sm font-semibold text-green-800">
-                    Active
-                  </p>
+                  <div>
+                    <p className="text-xs font-bold text-emerald-900 uppercase tracking-wider">
+                      Active
+                    </p>
 
-                  <p className="text-xs text-green-600">
-                    Account is active
-                  </p>
+                    <p className="text-xs font-medium text-emerald-700">
+                      Account is active
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                Role
-              </p>
+              <div className="rounded-xl border border-slate-100 bg-slate-50/80 p-4">
+                <p className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
+                  Role
+                </p>
 
-              <p className="mt-1 text-sm font-semibold text-slate-800">
-                {user.role}
-              </p>
-            </div>
+                <p className="mt-1 text-sm font-bold text-slate-900">
+                  {user.role}
+                </p>
+              </div>
 
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                Username
-              </p>
+              <div className="rounded-xl border border-slate-100 bg-slate-50/80 p-4">
+                <p className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
+                  Username
+                </p>
 
-              <p className="mt-1 truncate text-sm font-semibold text-slate-800">
-                @{user.username}
-              </p>
+                <p className="mt-1 truncate text-sm font-bold text-slate-900">
+                  @{user.username}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Future settings */}
-      <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="font-semibold text-slate-900">
+            <h2 className="text-base font-bold text-slate-900">
               Profile Settings
             </h2>
 
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-0.5 text-xs text-slate-500">
               Profile editing and password management can be added here.
             </p>
           </div>
@@ -228,7 +239,7 @@ export default function ProfilePage() {
           <button
             type="button"
             disabled
-            className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-400"
+            className="cursor-not-allowed rounded-xl border border-slate-200 bg-slate-100/80 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-slate-400"
           >
             Edit Profile
           </button>
@@ -250,19 +261,19 @@ function InfoItem({
   icon,
 }: InfoItemProps) {
   return (
-    <div>
-      <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+    <div className="rounded-xl border border-slate-100 bg-slate-50/50 p-3.5">
+      <p className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
         {label}
       </p>
 
-      <div className="mt-2 flex items-center gap-2">
+      <div className="mt-1.5 flex items-center gap-2">
         {icon && (
-          <span className="text-slate-400">
+          <span className="text-slate-400 shrink-0">
             {icon}
           </span>
         )}
 
-        <p className="truncate text-sm font-medium text-slate-800">
+        <p className="truncate text-sm font-bold text-slate-800">
           {value}
         </p>
       </div>

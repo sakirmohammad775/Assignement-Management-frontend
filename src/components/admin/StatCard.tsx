@@ -22,7 +22,7 @@ export default function StatCard({
       className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-md"
     >
       <div className="flex items-start justify-between">
-        <div className="rounded-xl bg-indigo-50 p-3 text-indigo-600">
+        <div className="rounded-xl bg-rose-50 p-3 text-[#6b1d2f]">
           <Icon size={21} />
         </div>
 

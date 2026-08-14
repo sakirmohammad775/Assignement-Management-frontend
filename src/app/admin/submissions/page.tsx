@@ -91,7 +91,7 @@ export default function AdminSubmissionsPage() {
       <div className="flex min-h-[400px] items-center justify-center">
         <Loader2
           size={28}
-          className="animate-spin text-indigo-600"
+          className="animate-spin text-[#6b1d2f]"
         />
       </div>
     );
@@ -175,7 +175,7 @@ export default function AdminSubmissionsPage() {
             onClick={() => setFilter(status)}
             className={`rounded-lg px-4 py-2 text-sm font-semibold transition ${
               filter === status
-                ? "bg-indigo-600 text-white"
+                ? "bg-[#6b1d2f] text-white"
                 : "border border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
             }`}
           >

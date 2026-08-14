@@ -343,7 +343,7 @@ export default function AdminStudentsPage() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-rose-50 text-[#6b1d2f]">
               <GraduationCap size={23} />
             </div>
 
@@ -361,7 +361,7 @@ export default function AdminStudentsPage() {
 
         <button
           onClick={openAddModal}
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#6b1d2f] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700"
         >
           <Plus size={18} />
           Add Student
@@ -395,7 +395,7 @@ export default function AdminStudentsPage() {
               </p>
             </div>
 
-            <div className="rounded-lg bg-indigo-50 p-3 text-indigo-600">
+            <div className="rounded-lg bg-rose-50 p-3 text-[#6b1d2f]">
               <Users size={21} />
             </div>
           </div>
@@ -480,7 +480,7 @@ export default function AdminStudentsPage() {
                   {/* Student */}
                   <td className="px-5 py-4">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo-50 font-semibold text-indigo-600">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-50 font-semibold text-[#6b1d2f]">
                         {(
                           student.first_name?.[0] ||
                           student.username?.[0] ||
@@ -514,7 +514,7 @@ export default function AdminStudentsPage() {
                   {/* Class */}
                   <td className="px-5 py-4">
                     {student.class_name ? (
-                      <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
+                      <span className="rounded-full bg-rose-50 px-3 py-1 text-xs font-semibold text-[#6b1d2f]">
                         {student.class_name}
                       </span>
                     ) : (
@@ -531,7 +531,7 @@ export default function AdminStudentsPage() {
                         onClick={() =>
                           openEditModal(student)
                         }
-                        className="rounded-lg border border-slate-200 p-2 text-slate-600 transition hover:bg-slate-50 hover:text-indigo-600"
+                        className="rounded-lg border border-slate-200 p-2 text-slate-600 transition hover:bg-slate-50 hover:text-[#6b1d2f]"
                         title="Edit student"
                       >
                         <Pencil size={17} />
@@ -773,7 +773,7 @@ export default function AdminStudentsPage() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#6b1d2f] px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {saving && (
                     <Loader2

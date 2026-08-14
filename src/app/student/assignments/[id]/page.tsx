@@ -122,7 +122,7 @@ export default function StudentAssignmentDetailsPage() {
         <div className="border-t border-slate-100 pt-6">
           <Link
             href={`/student/assignments/${assignment.id}/submit`}
-            className="inline-flex w-full items-center justify-center rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700 sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-lg bg-[#6b1d2f] px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700 sm:w-auto"
           >
             Submit Assignment
           </Link>

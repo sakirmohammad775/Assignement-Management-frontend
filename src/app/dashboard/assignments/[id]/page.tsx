@@ -165,18 +165,18 @@ export default function AssignmentDetailsPage() {
         {isStudent &&
           assignment.status === "PUBLISHED" && (
             <div className="border-t border-slate-100 p-5 sm:p-7">
-              <div className="rounded-xl bg-indigo-50 p-5">
+              <div className="rounded-xl bg-rose-50 p-5">
                 <h2 className="font-semibold text-indigo-900">
                   Ready to submit?
                 </h2>
 
-                <p className="mt-1 text-sm text-indigo-700">
+                <p className="mt-1 text-sm text-[#6b1d2f]">
                   Submit your work before the deadline.
                 </p>
 
                 <Link
                   href={`/dashboard/assignments/${assignment.id}/submit`}
-                  className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
+                  className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-[#6b1d2f] px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
                 >
                   <Send size={17} />
                   Submit Assignment

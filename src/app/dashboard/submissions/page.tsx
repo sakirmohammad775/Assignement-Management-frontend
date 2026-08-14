@@ -186,7 +186,7 @@ export default function SubmissionsPage() {
               <div className="shrink-0">
                 <Link
                   href={`/dashboard/submissions/${submission.id}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#6b1d2f] px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
                 >
                   <Eye size={17} />
 

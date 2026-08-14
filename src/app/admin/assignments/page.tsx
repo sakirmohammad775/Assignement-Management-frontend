@@ -54,7 +54,7 @@ export default function AdminAssignmentsPage() {
       <div className="flex min-h-[400px] items-center justify-center">
         <Loader2
           size={28}
-          className="animate-spin text-indigo-600"
+          className="animate-spin text-[#6b1d2f]"
         />
       </div>
     );
@@ -84,10 +84,10 @@ export default function AdminAssignmentsPage() {
       <div className="mt-6 grid gap-4 sm:grid-cols-3">
         <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="rounded-lg bg-indigo-50 p-2">
+            <div className="rounded-lg bg-rose-50 p-2">
               <ClipboardList
                 size={20}
-                className="text-indigo-600"
+                className="text-[#6b1d2f]"
               />
             </div>
 

@@ -136,7 +136,7 @@ export default function StudentAssignmentsPage() {
 
               <Link
                 href={`/student/assignments/${assignment.id}`}
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-[#6b1d2f] px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
               >
                 <Eye size={17} />
                 View

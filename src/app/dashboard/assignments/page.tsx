@@ -47,7 +47,7 @@ export default function AssignmentsPage() {
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm font-semibold text-indigo-600">
+          <p className="text-sm font-semibold text-[#6b1d2f]">
             Teacher Portal
           </p>
 
@@ -62,7 +62,7 @@ export default function AssignmentsPage() {
 
         <Link
           href="/dashboard/assignments/create"
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#6b1d2f] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
         >
           <Plus size={18} />
           Create Assignment
@@ -84,7 +84,7 @@ export default function AssignmentsPage() {
           <div className="flex flex-col items-center gap-3">
             <Loader2
               size={30}
-              className="animate-spin text-indigo-600"
+              className="animate-spin text-[#6b1d2f]"
             />
 
             <p className="text-sm text-slate-500">
@@ -117,7 +117,7 @@ export default function AssignmentsPage() {
                   {/* Assignment */}
 
                   <div className="flex items-start gap-3">
-                    <div className="rounded-lg bg-indigo-50 p-2.5 text-indigo-600">
+                    <div className="rounded-lg bg-rose-50 p-2.5 text-[#6b1d2f]">
                       <ClipboardList size={18} />
                     </div>
 
@@ -210,7 +210,7 @@ export default function AssignmentsPage() {
 
                 <Link
                   href="/dashboard/assignments/create"
-                  className="mt-5 inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white"
+                  className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#6b1d2f] px-4 py-2.5 text-sm font-semibold text-white"
                 >
                   <Plus size={17} />
                   Create Assignment

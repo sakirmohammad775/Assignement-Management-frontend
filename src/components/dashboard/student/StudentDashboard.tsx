@@ -148,13 +148,13 @@ export default function StudentDashboardPage() {
 
       {/* Class */}
       {studentClass.length > 0 && (
-        <div className="flex items-center gap-3 rounded-xl border border-indigo-100 bg-indigo-50 p-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+        <div className="flex items-center gap-3 rounded-xl border border-indigo-100 bg-rose-50 p-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#6b1d2f] text-white">
             <GraduationCap size={21} />
           </div>
 
           <div>
-            <p className="text-xs font-medium text-indigo-600">My Class</p>
+            <p className="text-xs font-medium text-[#6b1d2f]">My Class</p>
 
             <p className="font-semibold text-slate-900">
               {studentClass[0].class_name}

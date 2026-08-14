@@ -107,7 +107,7 @@ export default function AssignmentDetailsPage() {
     return (
       <div className="flex min-h-[500px] items-center justify-center">
         <div className="flex flex-col items-center gap-3">
-          <Loader2 size={30} className="animate-spin text-indigo-600" />
+          <Loader2 size={30} className="animate-spin text-[#6b1d2f]" />
 
           <p className="text-sm text-slate-500">Loading assignment...</p>
         </div>
@@ -223,7 +223,7 @@ export default function AssignmentDetailsPage() {
 
         <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2">
           <div className="flex items-center gap-2">
-            <ClipboardList size={18} className="text-indigo-600" />
+            <ClipboardList size={18} className="text-[#6b1d2f]" />
 
             <h2 className="font-semibold text-slate-900">
               Assignment Description
@@ -285,16 +285,16 @@ export default function AssignmentDetailsPage() {
       {/* Submission shortcut */}
 
       {assignment.status === "PUBLISHED" && (
-        <div className="mt-5 rounded-xl border border-indigo-200 bg-indigo-50 p-6">
+        <div className="mt-5 rounded-xl border border-indigo-200 bg-rose-50 p-6">
           <h2 className="font-semibold text-indigo-900">Student Submissions</h2>
 
-          <p className="mt-1 text-sm text-indigo-700">
+          <p className="mt-1 text-sm text-[#6b1d2f]">
             View and grade submissions for this assignment.
           </p>
 
           <Link
             href={`/dashboard/submissions?assignment=${assignment.id}`}
-            className="mt-4 inline-flex rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
+            className="mt-4 inline-flex rounded-lg bg-[#6b1d2f] px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
           >
             View Submissions
           </Link>
