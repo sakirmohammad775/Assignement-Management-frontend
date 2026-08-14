@@ -174,7 +174,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
         {/* Brand Logo Header */}
         <div className="flex h-20 items-center justify-between border-b border-slate-800/80 px-6">
           <Link
-            href={role === "ADMIN" ? "/admin" : "/"}
+            href={role === "ADMIN" ? "/" : "/"}
             className="flex items-center gap-3 group"
             onClick={onClose}
           >
@@ -182,7 +182,6 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
               <GraduationCap size={20} />
             </div>
             <div className="flex flex-col">
-  
               <span className="text-lg font-extrabold tracking-wide text-white leading-tight">
                 EduAssign<span className="text-[#6b1d2f]">.</span>
               </span>
