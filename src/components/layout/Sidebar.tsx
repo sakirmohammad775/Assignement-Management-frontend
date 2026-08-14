@@ -9,6 +9,8 @@ import {
   LayoutDashboard,
   LogOut,
   Settings,
+  ShieldAlert,
+  UserCheck,
   Users,
   X,
 } from "lucide-react";
@@ -159,47 +161,70 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
         <button
           aria-label="Close sidebar"
           onClick={onClose}
-          className="fixed inset-0 z-40 bg-black/40 lg:hidden"
+          className="fixed inset-0 z-40 bg-slate-950/80 backdrop-blur-sm transition-opacity lg:hidden"
         />
       )}
 
-      {/* Sidebar */}
+      {/* Sidebar Container */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-[#0F1F3D] text-white transition-transform duration-200 lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-slate-950 border-r border-slate-800/80 text-slate-300 transition-transform duration-300 ease-in-out lg:translate-x-0 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* Logo */}
-        <div className="flex h-16 items-center justify-between border-b border-white/10 px-5">
+        {/* Brand Logo Header */}
+        <div className="flex h-20 items-center justify-between border-b border-slate-800/80 px-6">
           <Link
-            href={role === "ADMIN" ? "/admin" : "/dashboard"}
-            className="flex items-center gap-2 text-lg font-bold"
+            href={role === "ADMIN" ? "/admin" : "/"}
+            className="flex items-center gap-3 group"
             onClick={onClose}
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-500">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#6b1d2f] text-white shadow-md shadow-red-950/50 group-hover:bg-[#521523] transition-colors">
               <GraduationCap size={20} />
             </div>
-            EduAssign
+            <div className="flex flex-col">
+  
+              <span className="text-lg font-extrabold tracking-wide text-white leading-tight">
+                EduAssign<span className="text-[#6b1d2f]">.</span>
+              </span>
+              <span className="text-[9px] font-bold tracking-widest text-slate-400 uppercase">
+                ACADEMIC PORTAL
+              </span>
+            </div>
           </Link>
 
           <button
             onClick={onClose}
-            className="rounded-lg p-2 text-slate-400 hover:bg-white/10 hover:text-white lg:hidden"
+            className="rounded-lg p-2 text-slate-400 hover:bg-slate-900 hover:text-white lg:hidden transition-colors"
           >
             <X size={20} />
           </button>
         </div>
 
-        {/* Role */}
-        <div className="px-5 pt-5">
-          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-            {role || "Account"}
-          </p>
+        {/* Role Badge Section */}
+        <div className="px-6 pt-6 pb-2">
+          <div className="flex items-center gap-2 rounded-xl bg-slate-900/90 border border-slate-800/60 px-3 py-2">
+            {role === "ADMIN" ? (
+              <ShieldAlert className="w-4 h-4 text-rose-400 shrink-0" />
+            ) : (
+              <UserCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+            )}
+            <div className="flex flex-col">
+              <span className="text-[10px] font-bold tracking-wider text-slate-400 uppercase">
+                Logged in as
+              </span>
+              <span className="text-xs font-bold text-white tracking-wide">
+                {role || "Account"}
+              </span>
+            </div>
+          </div>
         </div>
 
-        {/* Navigation */}
-        <div className="px-4 py-4">
-          <nav className="space-y-1">
+        {/* Main Navigation Links */}
+        <div className="flex-1 overflow-y-auto px-4 py-4 space-y-1">
+          <p className="px-3 pb-2 text-[10px] font-bold tracking-wider text-slate-400 uppercase">
+            Menu Navigation
+          </p>
+          <nav className="space-y-1.5">
             {visibleNavigation.map((item) => {
               const Icon = item.icon;
 
@@ -211,13 +236,13 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
                   key={`${item.label}-${item.href}`}
                   href={item.href}
                   onClick={onClose}
-                  className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition ${
+                  className={`flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-xs font-semibold tracking-wide transition-all duration-200 ${
                     active
-                      ? "bg-indigo-600 text-white"
-                      : "text-slate-300 hover:bg-white/10 hover:text-white"
+                      ? "bg-gradient-to-r from-[#6b1d2f] to-rose-900 text-white shadow-md shadow-red-950/40"
+                      : "text-slate-400 hover:bg-slate-900 hover:text-white"
                   }`}
                 >
-                  <Icon size={18} />
+                  <Icon size={18} className={active ? "text-white" : "text-slate-400"} />
                   {item.label}
                 </Link>
               );
@@ -225,11 +250,15 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
           </nav>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-auto border-t border-white/10 p-4">
+        {/* Bottom Actions Section */}
+        <div className="mt-auto border-t border-slate-800/80 p-4 space-y-1 bg-slate-950">
           <Link
             href={role === "ADMIN" ? "/admin/settings" : "/dashboard/settings"}
-            className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-slate-300 hover:bg-white/10 hover:text-white"
+            className={`flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-xs font-semibold tracking-wide transition-colors ${
+              pathname.includes("/settings")
+                ? "bg-gradient-to-r from-[#6b1d2f] to-rose-900 text-white"
+                : "text-slate-400 hover:bg-slate-900 hover:text-white"
+            }`}
           >
             <Settings size={18} />
             Settings
@@ -237,12 +266,13 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
 
           <button
             onClick={handleLogout}
-            className="mt-1 flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-slate-300 hover:bg-white/10 hover:text-white"
+            className="flex w-full items-center gap-3 rounded-xl px-3.5 py-2.5 text-xs font-semibold tracking-wide text-rose-400/90 hover:bg-rose-950/40 hover:text-rose-300 transition-colors"
           >
             <LogOut size={18} />
             Logout
           </button>
         </div>
+
       </aside>
     </>
   );

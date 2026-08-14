@@ -1,95 +1,77 @@
-import {
-  Clock3,
-  LayoutDashboard,
-  MessageSquareText,
-  ShieldCheck,
-  Smartphone,
-  Workflow,
-} from "lucide-react";
+import React from 'react';
+import { CheckCircle2, Award, Users, Globe } from 'lucide-react';
 
-const benefits = [
-  {
-    icon: LayoutDashboard,
-    title: "Centralized Dashboard",
-    description:
-      "Keep assignments, submissions, classes and academic activity organized in one place.",
-  },
-  {
-    icon: Workflow,
-    title: "Simple Workflow",
-    description:
-      "Create, publish, submit, review and grade assignments through one clear workflow.",
-  },
-  {
-    icon: Clock3,
-    title: "Save Time",
-    description:
-      "Reduce manual assignment tracking and spend more time focused on teaching and learning.",
-  },
-  {
-    icon: MessageSquareText,
-    title: "Better Feedback",
-    description:
-      "Teachers can provide marks and meaningful feedback directly through submissions.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Role-Based Access",
-    description:
-      "Administrators, teachers and students only access the features relevant to their role.",
-  },
-  {
-    icon: Smartphone,
-    title: "Responsive Experience",
-    description:
-      "Access the platform comfortably across desktop, tablet and mobile devices.",
-  },
-];
+export const BenefitsSection: React.FC = () => {
+  const benefits = [
+    {
+      icon: <Award className="w-8 h-8 text-[#6b1d2f]" />,
+      title: 'Accredited Programs',
+      description: 'Globally recognized degrees designed to meet modern industry standards.'
+    },
+    {
+      icon: <Users className="w-8 h-8 text-[#6b1d2f]" />,
+      title: 'Expert Mentorship',
+      description: 'Direct guidance from top-tier professors and industry practitioners.'
+    },
+    {
+      icon: <Globe className="w-8 h-8 text-[#6b1d2f]" />,
+      title: 'Global Community',
+      description: 'Diverse student body representing over 80+ countries around the world.'
+    }
+  ];
 
-export default function BenefitsSection() {
+  const highlights = [
+    'Flexible online & hybrid course schedules',
+    'State-of-the-art research laboratories',
+    'Career guidance & internship placements',
+    'Over $2M allocated annually in scholarships'
+  ];
+
   return (
-    <section className="bg-slate-50">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-indigo-600">
-            Why EduAssign
-          </p>
-
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-            Everything in one place
+    <section className="w-full bg-slate-50 py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+          <span className="text-xs font-bold tracking-wider text-[#6b1d2f] uppercase border-b-2 border-[#6b1d2f] pb-0.5">
+            STUDENT ADVANTAGES
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+            Why Students Choose Eduvet
           </h2>
-
-          <p className="mt-4 text-sm leading-6 text-slate-600 sm:text-base">
-            Designed to make academic assignment management simpler,
-            faster and more organized.
-          </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit) => {
-            const Icon = benefit.icon;
-
-            return (
-              <div
-                key={benefit.title}
-                className="rounded-xl border border-slate-200 bg-white p-5 transition hover:shadow-md"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
-                  <Icon size={20} />
-                </div>
-
-                <h3 className="mt-4 font-semibold text-slate-900">
-                  {benefit.title}
-                </h3>
-
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  {benefit.description}
-                </p>
+        {/* Top Benefits Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {benefits.map((benefit, index) => (
+            <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 space-y-4">
+              <div className="p-3 bg-red-50 inline-block rounded-lg">
+                {benefit.icon}
               </div>
-            );
-          })}
+              <h3 className="text-lg font-bold text-slate-900">{benefit.title}</h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{benefit.description}</p>
+            </div>
+          ))}
         </div>
+
+        {/* Key Highlights Checklist */}
+        <div className="bg-white p-8 sm:p-10 rounded-2xl shadow-sm border border-slate-200/80">
+          <h3 className="text-lg font-bold text-slate-900 mb-6 text-center lg:text-left">
+            Everything you need for an exceptional learning experience
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {highlights.map((item, index) => (
+              <div key={index} className="flex items-center gap-3">
+                <CheckCircle2 className="w-5 h-5 text-[#6b1d2f] shrink-0" />
+                <span className="text-xs sm:text-sm text-slate-700 font-medium">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
-}
+};
+
+export default BenefitsSection;

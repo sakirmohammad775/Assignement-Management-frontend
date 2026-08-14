@@ -1,118 +1,89 @@
-import { ArrowRight, CheckCircle2, Link } from "lucide-react";
+import React from 'react';
+import { ArrowUpRight, Award, Trophy, ShieldCheck } from 'lucide-react';
 
-export default function Hero(){
-    return(
-        <section className="overflow-hidden">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-2 lg:px-8">
-          <div>
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-700">
-              <CheckCircle2 size={16} />
-              Simple assignment management
+export const Banner: React.FC = () => {
+  return (
+    <section className="relative w-full bg-slate-50 overflow-hidden py-12 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Content Column */}
+          <div className="lg:col-span-6 space-y-6 text-center lg:text-left z-10">
+            {/* Tagline Badge */}
+            <div className="inline-block">
+              <span className="text-xs font-bold tracking-wider text-red-900 bg-red-100/60 uppercase px-3 py-1.5 rounded-sm">
+                MEET WITH #01 UNIVERSITY
+              </span>
             </div>
 
-            <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-              Manage assignments.
-              <span className="block text-indigo-600">
-                Simplify learning.
-              </span>
+            {/* Main Headline */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+              Most reputed <br className="hidden sm:inline" />
+              educational{' '}
+              <span className="relative inline-block text-red-900 underline decoration-red-800 decoration-2 underline-offset-8">
+                institution
+              </span>{' '}
+              <br className="hidden sm:inline" />
+              in Booston
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
-              A centralized platform for teachers and students to create,
-              submit, review and manage academic assignments.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/login"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-5 py-3 font-semibold text-white transition hover:bg-indigo-700"
-              >
-                Get Started
-                <ArrowRight size={18} />
-              </Link>
-
+            {/* CTA Button */}
+            <div className="pt-2">
               <a
-                href="#features"
-                className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-700 transition hover:bg-slate-50"
+                href="#apply"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#6b1d2f] hover:bg-[#521523] text-white text-sm font-semibold rounded-sm transition-all shadow-md hover:shadow-lg"
               >
-                Explore Features
+                APPLY NOW
+                <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
+
+            {/* Accreditations / Awards Row */}
+            <div className="pt-8 border-t border-slate-200/80 flex items-center justify-center lg:justify-start gap-8 opacity-80">
+              <div className="flex items-center gap-2 text-slate-600">
+                <Trophy className="w-8 h-8 text-amber-600" />
+                <span className="text-xs font-semibold leading-tight text-left">TOP 10<br />GLOBAL</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-600">
+                <Award className="w-8 h-8 text-[#6b1d2f]" />
+                <span className="text-xs font-semibold leading-tight text-left">HYPER BEST<br />AWARD</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-600">
+                <ShieldCheck className="w-8 h-8 text-slate-700" />
+                <span className="text-xs font-semibold leading-tight text-left">ULTRA<br />CERTIFIED</span>
+              </div>
+            </div>
           </div>
 
-          {/* Dashboard Preview */}
-          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xl sm:p-6">
-            <div className="rounded-xl bg-slate-900 p-4 sm:p-5">
-              <div className="mb-5 flex items-center justify-between">
-                <div>
-                  <p className="text-xs text-slate-400">
-                    Teacher Dashboard
-                  </p>
+          {/* Right Image Column */}
+          <div className="lg:col-span-6 relative flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-lg lg:max-w-none">
+              {/* Main Student Image */}
+              <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
+                <img
+                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
+                  alt="Student with laptop"
+                  className="w-full h-[380px] sm:h-[480px] object-cover object-center"
+                />
+              </div>
 
-                  <h2 className="mt-1 text-lg font-semibold text-white">
-                    Overview
-                  </h2>
+              {/* Floating Award Badge (Bottom Right) */}
+              <div className="absolute -bottom-6 -left-2 sm:bottom-6 sm:-left-8 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3 z-20 max-w-xs">
+                <div className="p-2.5 bg-red-50 text-[#6b1d2f] rounded-lg">
+                  <Award className="w-6 h-6" />
                 </div>
-
-                <div className="h-9 w-9 rounded-full bg-indigo-500" />
-              </div>
-
-              <div className="grid grid-cols-3 gap-3">
-                {[
-                  ["12", "Assignments"],
-                  ["8", "Pending"],
-                  ["34", "Submissions"],
-                ].map(([value, label]) => (
-                  <div
-                    key={label}
-                    className="rounded-lg bg-slate-800 p-3"
-                  >
-                    <p className="text-xl font-bold text-white">
-                      {value}
-                    </p>
-
-                    <p className="mt-1 text-xs text-slate-400">
-                      {label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-4 rounded-lg bg-white p-4">
-                <p className="text-sm font-semibold text-slate-900">
-                  Recent Assignments
-                </p>
-
-                <div className="mt-3 space-y-3">
-                  {[
-                    "Mathematics Assignment",
-                    "Physics Assignment",
-                    "Programming Assignment",
-                  ].map((assignment, index) => (
-                    <div
-                      key={assignment}
-                      className="flex items-center justify-between border-b border-slate-100 pb-3 last:border-0 last:pb-0"
-                    >
-                      <span className="text-sm text-slate-700">
-                        {assignment}
-                      </span>
-
-                      <span
-                        className={`rounded-full px-2 py-1 text-xs font-medium ${
-                          index === 1
-                            ? "bg-amber-50 text-amber-700"
-                            : "bg-green-50 text-green-700"
-                        }`}
-                      >
-                        {index === 1 ? "Draft" : "Published"}
-                      </span>
-                    </div>
-                  ))}
+                <div>
+                  <h4 className="text-sm font-bold text-slate-900">2009</h4>
+                  <p className="text-xs text-slate-500 font-medium">Towerd Education Award</p>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
-      </section>
-    )
-}
+      </div>
+    </section>
+  );
+};
+
+export default Banner;
